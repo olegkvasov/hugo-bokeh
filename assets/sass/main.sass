@@ -1,0 +1,21 @@
+@import "fonts"
+@import "header"
+
+@import "home"
+@import "postCard"
+@import "list"
+@import "single"
+@import "infoBlock"
+
+body
+  background-color: #1E1E1E
+
+  //if mobile burger menu enable
+  &.blocked
+    overflow: hidden
+
+.wrapper
+  width: 100%
+  padding: 0 20px
+  @media (min-width: 900px)
+    max-width: 900px

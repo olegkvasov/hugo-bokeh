@@ -1,0 +1,116 @@
+.header
+  display: flex
+  justify-content: center
+
+  .navbar
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 80px
+
+    .logo
+      color: #FFFFFF
+      font-size: 25px
+
+      .word-code
+        color: #FFD371
+
+    .menu
+      display: flex
+      gap: 20px
+
+      .link
+        color: #FFFFFF
+        opacity: 50%
+
+        &.active
+          opacity: 100%
+          font-weight: 600
+
+      @media (max-width: 768px)
+        display: none
+
+    .mobile-menu
+      display: none
+
+      #expanded-menu
+        background-color: rgba(0, 0, 0, 0.9)
+        color: white
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        gap: 20px
+        z-index: 10
+        visibility: hidden
+        opacity: 0
+        transition: opacity 0.3s ease
+
+        a
+          font-size: 30px
+
+        &.active
+          visibility: visible
+          opacity: 1
+
+      $burger-color: white
+      .burger-menu
+        position: relative
+        display: block
+        border: 0
+        width: 5.5rem
+        height: 5.5rem
+        cursor: pointer
+        appearance: none
+        z-index: 11
+
+        &::after,
+        &::before
+          content: ""
+
+        span,
+        &::after,
+        &::before
+          backface-visibility: hidden
+          position: absolute
+          left: 1.3rem
+          right: 1.3rem
+          border-top: 0.4rem solid $burger-color
+          transition: .2s
+          border-radius: 0.7rem
+
+        &::before
+          top: 1.8rem
+
+        span
+          top: 2.6rem
+
+        &::after
+          top: 3.4rem
+
+        &.active
+          &::before,
+          &::after
+            top: 2.5rem
+            backface-visibility: hidden
+            transition: .3s
+
+
+          &::before
+            transform: rotate(45deg)
+
+
+          span
+            opacity: 0
+
+          &::after
+            transform: rotate(-45deg)
+
+
+      @media (max-width: 768px)
+        display: block

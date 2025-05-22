@@ -1,0 +1,28 @@
+<article class="post-card">
+    {{ $ISO_date := "2006-01-02T15:04:05Z0700" }} {{ $configDateFormat :=
+    .Site.Params.dateFormat | default "2 January 2006" }} {{ $image :=
+    .Params.image }}
+
+    <div class="post-info">
+        <!--Categories-->
+        <div class="post-categories">
+            {{ if .Params.categories }} {{ range .Params.categories }}
+            <span class="post-category">{{ . }}</span>
+            {{ end }} {{ end }}
+        </div>
+
+        <h4 class="post-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h4>
+
+        <div class="post-summary line-clamp-2">{{ .Summary | plainify }}</div>
+
+        <div class="post-footer">
+            <time datetime="{{ dateFormat $ISO_date .Date }}" class="post-date">
+                {{ time.Format $configDateFormat .Date }}
+            </time>
+            <div>{{ .WordCount }} слов</div>
+            <div>{{ .ReadingTime }} мин</div>
+        </div>
+    </div>
+</article>

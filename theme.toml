@@ -1,0 +1,14 @@
+name = 'Hugo bokeh blog theme'
+license = 'MIT'
+# licenselink = 'https://github.com/owner/repo/LICENSE'
+description = 'Hugo theme for your blog'
+
+homepage = 'https://github.com/olegkvasov/hugo-bokeh'
+
+tags = ["blog", "responsive", "minimal", "light", "multilingual"]
+features = ["blog", "sass"]
+
+[author]
+  name = 'Oleg Kvasov'
+  homepage = 'https://github.com/olegkvasov'
+

@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="flex justify-center pt-10">
+    <div class="wrapper">
+        {{ $pagesToShow := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{ $posts := $pagesToShow.ByDate.Reverse }}
+
+        <div class="content-section">
+            <div class="flex flex-col gap-5 posts">
+                {{ range $index, $post := first 5 $posts }}
+
+                {{ partial "postCard" $post }}
+
+                {{ end }}
+
+                {{ if gt (len $posts) 5 }}
+                <div class="see-more-posts">
+                    {{ range $firstSection := (where .Site.Sections "Section" "in" (first 1 (.Site.Params.mainSections))) }}
+                    <a href="{{ $firstSection.Permalink }}">
+                        <div>{{ T "home.see_all_posts" }}</div>
+                        <div class="arrow">{{ partial "svgs/arrow-down.svg" (dict "height" 25 "width" 25) . }}</div>
+                    </a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            <div class="info">
+                <div class="info-block">
+                    <div>
+                        {{ with .OutputFormats.Get "rss" -}}
+                        {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+                        {{ end }}
+                    </div>
+                    <div>
+                        <div class="info-block-title">
+                            Категории
+                        </div>
+                        <div class="info-block-categories">
+                            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                            <a href="/categories/{{ $name | urlize }}">
+                                <div class="info-block-category-btn">
+                                    {{ $name }}
+                                </div>
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-block-title">
+                            Контакты
+                        </div>
+                        <div class="info-blog-socials">
+                            <div class="info-block-socials-item">
+                                <div><a href="https://github.com/olegkvasov" target="_blank">{{ partial "svgs/github.svg" (dict "height" 25 "width" 25) . }}</a></div>
+                                <div><a href="https://t.me/olegkvasov" target="_blank">{{ partial "svgs/telegram.svg" (dict "height" 25 "width" 25) . }}</a></div>
+                            </div>
+                            <div class="info-block-socials-item">
+                                <div><a href="https://www.linkedin.com/in/oleg-kvasov-225646239/" target="_blank">{{ partial "svgs/linkedIn.svg" (dict "height" 25 "width" 25) . }}</a></div>
+                                <div><a href="{{ "/index.xml" | relURL }}" target="_blank">{{ partial "svgs/rss.svg" (dict "height" 25 "width" 25) . }}</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

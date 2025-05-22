@@ -1,0 +1,55 @@
+.post-card
+  display: flex
+  gap: 17px
+
+  .post-info
+    width: 550px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .post-categories
+      display: flex
+      gap: 10px
+
+    .post-category
+      color: #FFFFFF
+      opacity: 50%
+      font-weight: bold
+
+    .post-title
+      color: #FFD371
+      font-size: 20px
+      padding: 5px 0
+      overflow: hidden
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 1
+
+      @media (max-width: 768px)
+        -webkit-line-clamp: 2
+
+    .post-summary
+      color: rgb(206, 206, 211)
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6
+        color: rgb(206, 206, 211)
+
+    .post-date
+
+    .post-footer
+      display: flex
+      align-items: center
+      gap: 20px
+      color: #FFFFFF
+      font-size: 13px
+      opacity: 50%
+      padding: 10px 0
+
+    @media (max-width: 768px)
+      width: 100%

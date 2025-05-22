@@ -1,0 +1,29 @@
+<!--<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">-->
+
+{{ with resources.Get "sass/main.sass" }}
+{{ $opts := dict
+"enableSourceMap" (not hugo.IsProduction)
+"outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+}}
+{{ $css := . | toCSS $opts }}
+{{ if hugo.IsProduction }}
+{{ with $css | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ else }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ end }}
+{{ end }}
+
+{{ with resources.Get "css/main.css" }}
+{{ $opts := dict "minify" true }}
+{{ with . | css.TailwindCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ else }}
+    {{ with . | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{ end }}
+    {{ end }}
+{{ end }}
+{{ end }}
