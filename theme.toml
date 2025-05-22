@@ -1,6 +1,6 @@
 name = 'Hugo bokeh blog theme'
 license = 'MIT'
-# licenselink = 'https://github.com/owner/repo/LICENSE'
+licenselink = 'https://github.com/olegkvasov/hugo-bokeh/blob/main/LICENSE'
 description = 'Hugo theme for your blog'
 
 homepage = 'https://github.com/olegkvasov/hugo-bokeh'
