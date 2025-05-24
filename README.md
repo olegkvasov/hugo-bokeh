@@ -1,5 +1,7 @@
 # Hugo Bokeh Theme
 
+> We are completing the README file as much as possible, if you have any questions, please create an issue
+
 ## Features
 
 * 🖥️ Responsive
@@ -27,11 +29,19 @@ After that, open your hugo.toml file and specify the bokeh theme as the main the
 theme = "bokeh"
 ```
 
-## Configuration
+## Extra Features
 
 This describes the customization for the Bokeh theme, if you have not customized the Hugo project, go to [Configure the site](https://gohugo.io/getting-started/quick-start/#configure-the-site) for more information.
 
-### Content
+### Responsive
 
-#### Add a new post
+The Bokeh theme is adapted for different devices, allowing users from different devices to view your website.
 
+### Fast
+
+This theme is optimized for speed, which makes it fast and easy to load.  
+We also optimize the theme for maximum performance in [Google PageSpeed Insights](https://pagespeed.web.dev/)
+
+### Multilanguage
+
+The Bokeh theme supports multiple languages.
