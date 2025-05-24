@@ -1,5 +1,14 @@
 # Hugo Bokeh Theme
 
+## Features
+
+* 🖥️ Responsive
+* 🚀 Fast
+* 🇺🇸 Multilanguage
+* 🔗 Social icons
+* 📅 Grouping posts by year
+* 📰 Custom pages (about, contact, etc.)
+
 ## Installation
 
 First of all, install Hugo. See [Hugo guide](https://gohugo.io/getting-started/quick-start/) for more information.  
@@ -21,3 +30,8 @@ theme = "bokeh"
 ## Configuration
 
 This describes the customization for the Bokeh theme, if you have not customized the Hugo project, go to [Configure the site](https://gohugo.io/getting-started/quick-start/#configure-the-site) for more information.
+
+### Content
+
+#### Add a new post
+
