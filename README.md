@@ -6,8 +6,6 @@ First of all, install Hugo. See [Hugo guide](https://gohugo.io/getting-started/q
 
 Recommended install this theme with git submodule:
 
-> That way you can get new updates
-
 ```bash
 git submodule add https://github.com/olegkvasov/hugo-bokeh.git themes/bokeh
 ```
@@ -21,3 +19,5 @@ theme = "bokeh"
 ```
 
 ## Configuration
+
+This describes the customization for the Bokeh theme, if you have not customized the Hugo project, go to [Configure the site](https://gohugo.io/getting-started/quick-start/#configure-the-site) for more information.
